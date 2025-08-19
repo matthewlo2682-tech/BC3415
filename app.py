@@ -13,5 +13,10 @@ def main():
     #database
     return render_template("main.html")
 
+@app.route("/dbs",methods=["GET","POST"])
+def dbs():
+    q = float(request.form.get("q"))
+    return(render_template("dbs.html",r=(q)* 90.2))
+
 if __name__ == "__main__": # confirm run application live
     app.run()
